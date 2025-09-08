@@ -19,15 +19,3 @@ npm start
 ```
 
 Acesse: **http://localhost:3000**
-
-## Estrutura
-```
-atividade_01_futebol/
-  ├── server.js        # Express + Socket.IO; simulação e broadcast por room
-  ├── package.json
-  ├── .gitignore
-  └── public/
-      ├── index.html   # UI para escolher jogador e visualizar leituras
-      ├── main.js
-      └── style.css
-```
