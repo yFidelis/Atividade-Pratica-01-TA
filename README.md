@@ -7,7 +7,7 @@ Cada **room** representa um jogador. O cliente assina uma room e passa a receber
 
 ```bash
 # 1) entre na pasta
-cd atividade_01_futebol
+cd Atividade-Pratica-01-TA
 
 # 2) instale as dependências
 npm install
