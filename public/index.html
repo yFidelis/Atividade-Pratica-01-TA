@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atividade 01 — Sensores (Socket.IO)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <h1>Atividade prática #01</h1>
+      <p>Simulação de sensores de jogadores de futebol — cada <strong>room</strong> é um jogador.</p>
+    </div>
+    <div class="badge" id="connBadge">Desconectado</div>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <h2>Assinar Jogador (Room)</h2>
+      <div class="row">
+        <label for="selPlayer">Jogador:</label>
+        <select id="selPlayer"></select>
+        <button id="btnAssinar">Assinar</button>
+        <button id="btnPause" class="secondary">Pausar</button>
+        <button id="btnResume" class="secondary">Retomar</button>
+      </div>
+      <p id="infoRoom">Nenhuma room assinada.</p>
+    </section>
+
+    <section class="card">
+      <h2>Leituras Atuais</h2>
+      <div class="stats">
+        <div>
+          <span class="label">BPM</span>
+          <span id="bpm" class="value">-</span>
+          <small id="bpmZone" class="zone">—</small>
+        </div>
+        <div>
+          <span class="label">Velocidade (km/h)</span>
+          <span id="speed" class="value">-</span>
+          <small id="speedZone" class="zone">—</small>
+        </div>
+        <div><span class="label">Posição (x, y)</span><span id="pos" class="value">-</span></div>
+        <div><span class="label">Última amostra</span><span id="ts" class="value">-</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Campo (posição)</h2>
+      <canvas id="field" width="500" height="300"></canvas>
+    </section>
+
+    <section class="card">
+      <h2>Heatmap (rastro)</h2>
+      <canvas id="trail" width="500" height="300"></canvas>
+    </section>
+
+    <section class="card chart-card">
+      <h2>BPM — últimos 60s</h2>
+      <canvas id="chartBpm"></canvas>
+    </section>
+
+    <section class="card chart-card">
+      <h2>Velocidade — últimos 60s</h2>
+      <canvas id="chartSpeed"></canvas>
+    </section>
+
+    <section class="card">
+      <h2>Stream Global</h2>
+      <p>Últimas amostras de todos os jogadores (apenas log):</p>
+      <pre id="log" class="log"></pre>
+    </section>
+  </main>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
